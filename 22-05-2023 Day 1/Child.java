@@ -21,5 +21,7 @@ public class Child {
         MyClass mc = new MyClass();
         mc.output1();
         mc.output2();
+        System.out.println(new MyClass().a);
+        System.out.println(new MyClass().b);
     }
 }
