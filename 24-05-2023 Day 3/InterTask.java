@@ -10,7 +10,6 @@ interface StudentDetails {
 interface Details extends StudentDetails {
     public void Marks() ;
 }
-
 class Record implements Details {
     public void Marks() {
         System.out.println("The student records = " + m2);
