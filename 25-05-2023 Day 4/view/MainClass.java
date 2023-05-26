@@ -52,33 +52,11 @@ public class MainClass {
 						break;
 					}
 					case 3: {
-						try {
-							Employee emp = new Employee();
-							FileOutputStream fos = new FileOutputStream("dedalus.txt");
-							ObjectOutputStream oos = new ObjectOutputStream(fos);
-							oos.writeObject(ec);
-							System.out.println("Serialized to file dedalus.txt");
-							oos.close();
-							fos.close();
-						} catch (FileNotFoundException fnf) {
-							System.out.println("No file");
-						}
+						ec.serialize(ec.getEmplist());
 						break;
 					}
 					case 4: {
-						try {
-							FileInputStream fis = new FileInputStream("dedalus.txt");
-							ObjectInputStream ois = new ObjectInputStream(fis);
-							System.out.println("Deserialized from file dedalus.txt");
-							Employeecontroller deserializedEC = (Employeecontroller) ois.readObject();
-							deserializedEC.viewEmployee();
-							ois.close();
-							fis.close();
-						} catch (FileNotFoundException fnf) {
-							System.out.println("No file");
-						} catch (ClassNotFoundException cnf) {
-							System.out.println("No EmployeeController class");
-						}
+						ec.deserialize("dedalus.txt");
 						break;
 					}
 					default: {
