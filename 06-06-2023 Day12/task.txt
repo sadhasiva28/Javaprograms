@@ -1,0 +1,42 @@
+Multiple row subquery:
+-- operators used here is IN , ANY, ALL
+ 
+<ANY   => <MAX
+> ANY => >MIN
+=ANY  => IN
+>ALL  =>  >MAX
+<ALL  =>  <MIN
+
+1)Try with this operator with in
+
+select empno,ename,mgr,deptno from emp where (mgr,deptno) in
+(select mgr,deptno from emp where empno in(7566,7788));
+
+2)ANY
+
+select empno,ename,mgr,deptno from emp where (mgr,deptno) <ANY
+(select mgr,deptno from emp where empno in(7566,7788));
+
+
+select empno,ename,mgr,deptno from emp where (mgr,deptno) >ANY
+(select mgr,deptno from emp where empno in(7566,7788));
+
+this ANY Operator is not working
+
+select empno,ename,mgr,deptno from emp where (mgr,deptno) =ANY
+(select mgr,deptno from emp where empno in(7566,7788));
+
+THIS =ANY is working
+
+3)ALL
+
+
+select empno,ename,mgr,deptno from emp where (mgr,deptno) >ALL
+(select mgr,deptno from emp where empno in(7566,7788));
+
+
+select empno,ename,mgr,deptno from emp where (mgr,deptno) <ALL
+(select mgr,deptno from emp where empno in(7566,7788));
+
+This ALL is Not Working
+

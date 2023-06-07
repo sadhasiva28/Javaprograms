@@ -35,7 +35,7 @@ select *from Orders;
 
 --This is creating the OrderDetails--
 
-CREATE TABLE OrderDetail(orderNumber number(5) NOT NULL,prodId number(5) NOT NULL,
+CREATE TABLE OrderDetails(orderNumber number(5) NOT NULL,prodId number(5) NOT NULL,
 			FOREIGN KEY(orderNumber) REFERENCES Orders(orderNumber),
 			FOREIGN KEY(prodId) REFERENCES Products(prodId));
 
