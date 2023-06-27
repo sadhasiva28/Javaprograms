@@ -1,0 +1,55 @@
+1)select *from emp;
+2)select job from emp;
+3)select *from emp where job='MANAGER';
+4)select *from emp where hiredate<'01-01-81'
+5)select *from emp where job='MANAGER';
+6)select *from emp where MGR=7839;
+7)select empno,ename,sal,job,comm from emp where COMM>sal ;
+8)select empno,ename,sal,job,comm from emp where sal>100 ;
+9)select empno,ename,sal as salary,job,deptno from emp where deptno=10 or deptno=20;
+10)select empno,ename,sal,job,comm from emp where sal<=1600 ;
+11)select empno,ename,sal,job,deptno from emp where job='CLERK' or DEPTNO=20 ;
+12)select *from emp where ename='SMITH';
+13)select empno,ename,deptno from emp;
+14)select empno,deptno from emp;
+15)select DISTINCT deptno from emp;
+16)select empno,ename,sal,sal*2.0 Bonus where sal>3000;
+17)select empno,ename,sal as salary,sal*1.5 Bonus$ from emp;
+18)select empno,job ename || job as emp_and_job from emp;
+19)select empno,ename,sal from emp where job='MANAGER';
+20)
+21)select distinct empno,ename from emp;
+22)select empno,sal,comm from emp;
+23)select distinct deptno,job from emp;
+24)select *from emp where ename='BLAKE';
+25)select *from emp where job='CLERK';
+26)select *from emp where hiredate='01-05-81';
+27)select *from emp where sal<3500;
+28)select empno, ename, sal from emp where Hiredate < DATE '1981-04-01';
+29) SELECT Empno, Ename, Job, Mgr, Hiredate, Sal, Comm, Deptno
+FROM emp
+WHERE (EXTRACT(YEAR FROM SYSDATE) - EXTRACT(YEAR FROM Hiredate)) > 10;
+30)select *from emp where job='MANAGER';
+31)SELECT Empno, Ename, Job, Mgr, Hiredate, Sal, Comm, Deptno
+FROM emp
+WHERE job = 'CLERK' AND (EXTRACT(YEAR FROM SYSDATE) - EXTRACT(YEAR FROM Hiredate)) > 8;
+32)select empno,ename,sal,job,annual,deptno,comm from(select empno,ename,sal,job,comm,nvl2(comm,(sal+comm)*12,(sal*12)) as annual,deptno from emp)where annual<34000 and deptno=30 and job='SALESMAN' and comm>0 and comm<sal;
+33)select * from emp where job='SALESMAN' and comm>0;
+34)select * from emp where job='SALESMAN' and deptno=30 and comm>sal; 
+35)
+36)select * from emp where ROWNUM <=5; 
+37)select empno,ename,job,sal from emp;
+38)select distinct deptno from emp;
+39)select distinct job,deptno from emp;
+40)select * from emp where ename='MILLER';
+41)select * from emp where deptno=10; 
+42) select * from emp where job='SALESMAN';
+43) select * from emp where hiredate<'01-01-84'; 
+44)select * from emp where sal>2500; 
+45)select * from emp where hiredate >=to_date('1 April 1982','DD Month YYYY'); 
+46)select empno,ename,sal,trunc((sal/30),2) as daily_sal from emp; 
+47)select empno,ename,sal,experience from emp where job='ANALYST'; 
+48)select * from emp where experience>6.5; 
+49)select * from emp where hiredate >=to_date('01-06-1981','dd-mm-yyyy'); 
+50)select empno,ename,job,deptno from emp where job='CLERK' and deptno=10; 
+51)select * from emp where hiredate<'01-01-85' and sal >3000; 
